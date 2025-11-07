@@ -1,7 +1,7 @@
 
 import { NextResponse } from 'next/server'
 import OpenAI from 'openai'
-import { upsertFacts, addEvents } from '@/lib/knowledge'
+import { upsertFacts, addEvents } from '../../../../lib/knowledge';
 
 const PASS = process.env.BACKROOM_PASSPHRASE || ''
 
