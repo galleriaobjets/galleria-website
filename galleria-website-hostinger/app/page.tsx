@@ -1,8 +1,13 @@
 
+
+export const dynamic = 'force-dynamic';
+
 import Link from 'next/link'
 import { readKnowledge } from '@/lib/knowledge'
+ 
 export default async function Home(){
   const k=await readKnowledge()
+  
   return (<div>
     <div className="card" style={{border:'0',borderBottom:'1px solid #eee',borderRadius:0}}>
       <div className="container"><h1 className="h1">Galleria Objets — Living Site</h1>
