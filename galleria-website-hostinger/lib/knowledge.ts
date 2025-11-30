@@ -8,8 +8,8 @@ async function ensureTables() {
       attr TEXT NOT NULL,
       value TEXT NOT NULL,
       lang VARCHAR(8) DEFAULT 'en',
-      tags JSON NULL,
-      UNIQUE KEY uniq_fact ((MD5(CONCAT(entity,'::',attr,'::',IFNULL(lang,'')))))
+      tags JSON NULL
+     
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
   `);
   await pool.query(`
@@ -20,8 +20,7 @@ async function ensureTables() {
       venue TEXT NULL,
       description_en TEXT NULL,
       description_it TEXT NULL,
-      tags JSON NULL,
-      UNIQUE KEY uniq_event ((MD5(CONCAT(title,'::',datetime))))
+      tags JSON NULL
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
   `);
 }
